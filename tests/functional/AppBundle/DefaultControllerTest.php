@@ -21,6 +21,6 @@ class DefaultControllerTest extends \Codeception\Test\Unit
     public function testIndexPage()
     {
         $this->tester->amOnPage('/');
-        $this->tester->see('How to create your first page in Symfony');
+        $this->tester->see('NOOOOOOOOO How to create your first page in Symfony');
     }
 }

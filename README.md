@@ -437,6 +437,9 @@ Error on Codeception with Symfony 3.3:
 ---------
 https://github.com/Codeception/Codeception/pull/4309/commits
 
+Successful Test
+------
+
 * ```vendor/bin/codecept run functional```
 ```
  Codeception PHP Testing Framework v2.3.3
@@ -451,4 +454,37 @@ https://github.com/Codeception/Codeception/pull/4309/commits
  Time: 201 ms, Memory: 18.00MB
  
  OK (1 test, 1 assertion)
-
+```
+Failed Test
+------
+* ```vendor/bin/codecept run functional```
+```
+  Codeception PHP Testing Framework v2.3.3
+  Powered by PHPUnit 6.2.2 by Sebastian Bergmann and contributors.
+  
+  Functional Tests (1) ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Testing functional
+  ✖ DefaultControllerTest: Index page (0.20s)
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  
+  
+  Time: 576 ms, Memory: 18.00MB
+  
+  There was 1 failure:
+  
+  ---------
+  1) DefaultControllerTest: Index page
+   Test  tests/functional/AppBundle/DefaultControllerTest.php:testIndexPage
+  Failed asserting that  on page /
+  -->  Welcome! body { background: #F5F5F5; font: 18px/1.5 sans-serif; } h1, h2 { line-height: 1.2; margin: 0 0 .5em; } h1 { font-size: 36px; } h2 { font-size: 21px; margin-bottom: 1em; } p { margin: 0 0 1em 0; } a { color: #0000F0; } a:hover { text-decoration: none; } code { background: #F5F5F5; max-widt
+  [Content too long to display. See complete response in '/Users/rene/Projekte/CodeceptionDemo/tests/_output/' directory]
+  --> contains "fuck how to create your first page in symfony".
+  #1  Codeception\Lib\InnerBrowser->see
+  #2  /Users/rene/Projekte/CodeceptionDemo/tests/_support/_generated/FunctionalTesterActions.php:451
+  #3  /Users/rene/Projekte/CodeceptionDemo/tests/functional/AppBundle/DefaultControllerTest.php:24
+  #4  AppBundle\DefaultControllerTest->testIndexPage
+  
+  FAILURES!
+  Tests: 1, Assertions: 1, Failures: 1.
+```
+![Codeception Configuration in PHPStorm 3](doc/img/FailedTestOutput.png)
