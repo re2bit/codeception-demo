@@ -1,0 +1,34 @@
+version: '3'
+services:
+  symfony:
+    hostname: symfony
+    build: ./docker/php
+    ports:
+     - "8000:80"
+    volumes:
+     - symfony-codeception-sync:/var/www:nocopy
+    depends_on:
+     - symfony_mysql
+    networks:
+      symfony:
+        aliases:
+          - application
+  symfony_mysql:
+    hostname: symfony_mysql
+    image: mysql:5.7
+    ports:
+      - "3308:3306"
+    networks:
+      symfony:
+        aliases:
+          - mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=symfony
+      - MYSQL_DATABASE=symfony
+      - MYSQL_USER=symfony
+      - MYSQL_PASSWORD=symfony
+networks:
+  symfony:
+volumes:
+  symfony-codeception-sync:
+      external: true
