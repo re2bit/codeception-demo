@@ -12,6 +12,7 @@ Download and install
 * [Docker Symc](https://github.com/EugenMayer/docker-sync) (Mac and Windows only)  
 * [Composer](https://getcomposer.org/download/)  
 * [Symfony Tool](http://symfony.com/doc/current/setup.html)  
+* [Chrome](https://www.google.com/intl/de/chrome/browser/desktop/index.html)
 
 from scrach
 ===========
@@ -488,3 +489,20 @@ Failed Test
   Tests: 1, Assertions: 1, Failures: 1.
 ```
 ![Codeception Configuration in PHPStorm 3](doc/img/FailedTestOutput.png)
+
+
+Acceptance Tests
+-------
+* ```vendor/bin/codecept generate:cept acceptance StartPage```
+* ```docker run --net=host selenium/standalone-chrome```
+
+While Selenium was a tremendous tool, it wasn’t without its drawbacks.
+Because of its Javascript based automation engine and the security limitations browsers apply to Javascript,
+different things became impossible to do. To make things worse, webapps became more and more powerful over time,
+ using all sorts of special features new browsers provide and making these restrictions more and more painful.
+
+In 2006 a plucky engineer at Google named Simon Stewart started work on a project he called WebDriver.
+Google had long been a heavy user of Selenium, but testers had to work around the limitations of the product.
+Simon wanted a testing tool that spoke directly to the browser using the ‘native’ method for the browser and operating system,
+thus avoiding the restrictions of a sandboxed Javascript environment.
+The WebDriver project began with the aim to solve the Selenium’ pain-points.
