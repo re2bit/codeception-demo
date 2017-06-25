@@ -304,3 +304,43 @@ symfony_mysql_1  | 2017-06-25T16:54:07.857243Z 0 [Note] End of list of non-nativ
 symfony_mysql_1  | 2017-06-25T16:54:07.857335Z 0 [Note] mysqld: ready for connections.
 symfony_mysql_1  | Version: '5.7.17'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server (GPL)
 ```
+* ```docker ps```
+```
+CONTAINER ID        IMAGE                            COMMAND                  CREATED             STATUS              PORTS                    NAMES
+98f916a7adeb        codeceptiondemo_symfony          "docker-php-entryp..."   3 minutes ago       Up 3 minutes        0.0.0.0:8000->80/tcp     codeceptiondemo_symfony_1
+50686523d253        mysql:5.7                        "docker-entrypoint..."   3 minutes ago       Up 3 minutes        0.0.0.0:3308->3306/tcp   codeceptiondemo_symfony_mysql_1
+41cbd906773e        eugenmayer/unison:hostsync_0.2   "/entrypoint.sh su..."   5 minutes ago       Up 5 minutes        500/tcp                  symfony-codeception-sync
+```
+
+* ```docker exec -it codeceptiondemo_symfony_1 bash```
+* ```vendor/bin/codecept bootstrap```
+```
+ Bootstrapping Codeception 
+
+File codeception.yml created       <- global configuration
+> Unit helper has been created in tests/_support/Helper
+> UnitTester actor has been created in tests/_support
+> Actions have been loaded
+tests/unit created                 <- unit tests
+tests/unit.suite.yml written       <- unit tests suite configuration
+> Functional helper has been created in tests/_support/Helper
+> FunctionalTester actor has been created in tests/_support
+> Actions have been loaded
+tests/functional created           <- functional tests
+tests/functional.suite.yml written <- functional tests suite configuration
+> Acceptance helper has been created in tests/_support/Helper
+> AcceptanceTester actor has been created in tests/_support
+> Actions have been loaded
+tests/acceptance created           <- acceptance tests
+tests/acceptance.suite.yml written <- acceptance tests suite configuration
+ --- 
+
+ Codeception is installed for acceptance, functional, and unit testing 
+
+Next steps:
+1. Edit tests/acceptance.suite.yml to set url of your application. Change PhpBrowser to WebDriver to enable browser testing
+2. Edit tests/functional.suite.yml to enable a framework module. Remove this file if you don't use a framework
+3. Create your first acceptance tests using codecept g:cest acceptance First
+4. Write first test in tests/acceptance/FirstCest.php
+5. Run tests using: codecept run
+```
