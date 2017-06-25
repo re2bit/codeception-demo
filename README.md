@@ -419,3 +419,9 @@ Time: 106 ms, Memory: 10.00MB
 OK (1 test, 2 assertions)
 
 ```
+
+PHP Storm Integration
+---------------------
+![Codeception Configuration in PHPStorm 1](doc/img/CodeceptConfig1.png)
+![Codeception Configuration in PHPStorm 2](doc/img/CodeceptConfig2.png)
+![Codeception Configuration in PHPStorm 3](doc/img/CodeceptConfig3.png)
