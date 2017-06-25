@@ -8,9 +8,4 @@ actor_suffix: Tester
 extensions:
     enabled:
         - Codeception\Extension\RunFailed
-modules:
-   enabled:
-      - Symfony:
-          app_path: 'app'
-          var_path: 'var'
-          environment: 'test'
+
