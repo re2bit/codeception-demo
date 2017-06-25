@@ -425,3 +425,30 @@ PHP Storm Integration
 ![Codeception Configuration in PHPStorm 1](doc/img/CodeceptConfig1.png)
 ![Codeception Configuration in PHPStorm 2](doc/img/CodeceptConfig2.png)
 ![Codeception Configuration in PHPStorm 3](doc/img/CodeceptConfig3.png)
+
+Functional Test
+---------------
+* ```vendor/bin/codecept generate:test functional AppBundle/DefaultController```
+```
+ Test was created in /Users/rene/Projekte/CodeceptionDemo/tests/functional/AppBundle/DefaultControllerTest.php
+```
+
+Error on Codeception with Symfony 3.3:
+---------
+https://github.com/Codeception/Codeception/pull/4309/commits
+
+* ```vendor/bin/codecept run functional```
+```
+ Codeception PHP Testing Framework v2.3.3
+ Powered by PHPUnit 6.2.2 by Sebastian Bergmann and contributors.
+ 
+ Functional Tests (1) ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Testing functional
+ ✔ DefaultControllerTest: Index page (0.07s)
+ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ 
+ Time: 201 ms, Memory: 18.00MB
+ 
+ OK (1 test, 1 assertion)
+
