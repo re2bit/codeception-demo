@@ -378,3 +378,44 @@ No tests executed!
 ```
 
 Its up and running
+
+PHP Unit ?
+----------
+Unit Tests
+Codeception uses __PHPUnit as a backend for running its tests__. Thus, any PHPUnit test can be added to a Codeception test suite and then executed.  
+ If you ever wrote a PHPUnit test then do it just as you did before. Codeception adds some nice helpers to simplify common tasks.  
+The basics of unit tests are skipped here, instead you will get a basic knowledge of which features Codeception adds to unit tests.  
+To say it again: __you don’t need to install PHPUnit to run its tests. Codeception can run them too.__  
+__Source:__ [Codeception Unit Test Documentation](http://codeception.com/docs/05-UnitTests)
+
+Generate Unit Test
+---------
+* ```vendor/bin/codecept generate:test unit BlogService```
+```
+  Test was created in /var/www/tests/unit/BlogServiceTest.php
+```
+
+Change File on Host and __UPS!!!! Premission Problem !___ since we was root on Docker Machine !
+run in Docker
+```chown -R www-data:www-data ./*```
+
+Use Docker Commands on host or switch to www-data User !
+
+Run Unit Test
+-------------
+* ```vendor/bin/codecept run unit```
+```
+Codeception PHP Testing Framework v2.3.3
+Powered by PHPUnit 6.2.2 by Sebastian Bergmann and contributors.
+
+Unit Tests (1) ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Testing unit
+✔ BlogServiceTest: Test blog service (0.00s)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Time: 106 ms, Memory: 10.00MB
+
+OK (1 test, 2 assertions)
+
+```
