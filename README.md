@@ -1,7 +1,12 @@
-Codeception Demo
-====
+!!!!WORK IN PROGRESS !!!!!
+==========================
 
-A Symfony project to show the power of Codeception.
+
+
+
+Codeception Tech Talk
+====
+Testing with Codeception
 
 
 prepare your System
@@ -12,7 +17,6 @@ Download and install
 * [Docker Symc](https://github.com/EugenMayer/docker-sync) (Mac and Windows only)  
 * [Composer](https://getcomposer.org/download/)  
 * [Symfony Tool](http://symfony.com/doc/current/setup.html)  
-* [Chrome](https://www.google.com/intl/de/chrome/browser/desktop/index.html)
 
 from scrach
 ===========
